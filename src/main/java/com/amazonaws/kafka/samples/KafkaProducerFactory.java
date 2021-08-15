@@ -99,7 +99,7 @@ class KafkaProducerFactory {
                 producerProps.setProperty(SaslConfigs.SASL_JAAS_CONFIG, getSaslScramString());
             }
 
-            if (!glueSchemaRegistry){
+            if (glueSchemaRegistry){
                 producerProps.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
                 producerProps.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, AWSKafkaAvroSerializer.class.getName());
                 producerProps.setProperty(AWSSchemaRegistryConstants.AWS_REGION, KafkaClickstreamClient.gsrRegion);
