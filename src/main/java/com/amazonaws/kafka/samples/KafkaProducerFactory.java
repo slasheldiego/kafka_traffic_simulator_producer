@@ -42,7 +42,7 @@ class KafkaProducerFactory {
     private final Boolean mTLSEnable;
     private final Boolean saslScramEnable;
     private final Boolean glueSchemaRegistry;
-    private static final java.util.logging.Logger logger = LogManager.getLogger(KafkaClickstreamClient.class);
+    private static final Logger logger = LogManager.getLogger(KafkaClickstreamClient.class);
 
     private static String getSaslScramString() {
         String secretNamePrefix = "AmazonMSK_";
