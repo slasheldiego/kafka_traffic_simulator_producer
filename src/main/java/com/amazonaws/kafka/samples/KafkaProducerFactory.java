@@ -80,7 +80,7 @@ class KafkaProducerFactory {
 
         try (FileInputStream file = new FileInputStream(propertiesFilePath)) {
             loadProps.load(file);
-            logger.info("=====> " + loadProps.getProperty("BOOTSTRAP_SERVERS_CONFIG", BOOTSTRAP_SERVERS_CONFIG));
+            //logger.info("=====> " + loadProps.getProperty("BOOTSTRAP_SERVERS_CONFIG", BOOTSTRAP_SERVERS_CONFIG));
             producerProps.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, loadProps.getProperty("BOOTSTRAP_SERVERS_CONFIG", BOOTSTRAP_SERVERS_CONFIG).equals("") ? BOOTSTRAP_SERVERS_CONFIG : loadProps.getProperty("BOOTSTRAP_SERVERS_CONFIG", BOOTSTRAP_SERVERS_CONFIG));
             producerProps.setProperty(ProducerConfig.CLIENT_ID_CONFIG, loadProps.getProperty("CLIENT_ID_CONFIG", CLIENT_ID_CONFIG).equals("") ? CLIENT_ID_CONFIG : loadProps.getProperty("CLIENT_ID_CONFIG", CLIENT_ID_CONFIG));
 
