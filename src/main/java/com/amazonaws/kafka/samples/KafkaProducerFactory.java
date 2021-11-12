@@ -20,7 +20,7 @@ import org.apache.logging.log4j.Logger;
 import software.amazon.awssdk.services.glue.model.Compatibility;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.Properties;
 
 class KafkaProducerFactory {
