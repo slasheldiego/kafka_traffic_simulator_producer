@@ -11,12 +11,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class RunProducer implements Callable<String>{
 
     private static final Logger logger = LogManager.getLogger(RunProducer.class);
-    private final Producer<java.lang.String, com.amazonaws.kafka.samples.ClickEvent> kafkaProducer;
+    private final Producer<java.lang.String, ClickEvent> kafkaProducer;
     private boolean cancel = false;
     private static AtomicInteger userIDMax = new AtomicInteger(1000);
     private Random rand = new Random();
 
-    RunProducer(Producer<java.lang.String, com.amazonaws.kafka.samples.ClickEvent> kafkaProducer) {
+    RunProducer(Producer<java.lang.String, ClickEvent> kafkaProducer) {
         this.kafkaProducer = kafkaProducer;
     }
 
