@@ -1,6 +1,6 @@
 package com.amazonaws.kafka.samples;
 
-import com.amazonaws.kafka.samples.saslscram.Secrets;
+//import com.amazonaws.kafka.samples.saslscram.Secrets;
 import com.amazonaws.services.schemaregistry.serializers.avro.AWSKafkaAvroSerializer;
 import com.amazonaws.services.schemaregistry.utils.AWSSchemaRegistryConstants;
 import com.amazonaws.services.schemaregistry.utils.AvroRecordType;
@@ -16,7 +16,7 @@ import org.apache.kafka.common.config.SslConfigs;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import samples.clickstream.avro.ClickEvent;
+//import samples.clickstream.avro.ClickEvent;
 import software.amazon.awssdk.services.glue.model.Compatibility;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -44,7 +44,7 @@ class KafkaProducerFactory {
     private final Boolean glueSchemaRegistry;
     private static final Logger logger = LogManager.getLogger(KafkaClickstreamClient.class);
 
-    private static String getSaslScramString() {
+    /*private static String getSaslScramString() {
         String secretNamePrefix = "AmazonMSK_";
         String secret = Secrets.getSecret(secretNamePrefix + KafkaClickstreamClient.saslscramUser, Secrets.getSecretsManagerClient(KafkaClickstreamClient.region));
         ObjectMapper objectMapper = new ObjectMapper();
@@ -58,7 +58,7 @@ class KafkaProducerFactory {
         }
         String password = jsonNode.get("password").asText();
         return "org.apache.kafka.common.security.scram.ScramLoginModule required username=" + KafkaClickstreamClient.saslscramUser + " password=" + password + ";";
-    }
+    }*/
 
     KafkaProducerFactory(String propertiesFilePath, Boolean sslEnable, Boolean mTLSEnable, Boolean saslScramEnable, Boolean glueSchemaRegistry) {
         this.propertiesFilePath = propertiesFilePath;
@@ -96,7 +96,7 @@ class KafkaProducerFactory {
             if (saslScramEnable) {
                 producerProps.setProperty(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_SSL");
                 producerProps.setProperty(SaslConfigs.SASL_MECHANISM, "SCRAM-SHA-512");
-                producerProps.setProperty(SaslConfigs.SASL_JAAS_CONFIG, getSaslScramString());
+                //producerProps.setProperty(SaslConfigs.SASL_JAAS_CONFIG, getSaslScramString());
             }
 
             if (glueSchemaRegistry){
@@ -140,7 +140,7 @@ class KafkaProducerFactory {
             if (saslScramEnable) {
                 producerProps.setProperty(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_SSL");
                 producerProps.setProperty(SaslConfigs.SASL_MECHANISM, "SCRAM-SHA-512");
-                producerProps.setProperty(SaslConfigs.SASL_JAAS_CONFIG, getSaslScramString());
+                //producerProps.setProperty(SaslConfigs.SASL_JAAS_CONFIG, getSaslScramString());
             }
 
             if (glueSchemaRegistry){

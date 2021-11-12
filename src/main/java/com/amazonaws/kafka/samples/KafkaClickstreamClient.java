@@ -1,7 +1,7 @@
 package com.amazonaws.kafka.samples;
 
 import org.apache.kafka.clients.producer.*;
-import samples.clickstream.avro.ClickEvent;
+//import samples.clickstream.avro.ClickEvent;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;

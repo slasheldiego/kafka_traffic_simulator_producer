@@ -5,7 +5,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import samples.clickstream.avro.ClickEvent;
+//import samples.clickstream.avro.ClickEvent;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
