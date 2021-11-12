@@ -138,7 +138,7 @@ public class KafkaClickstreamClient {
         ExecutorService executor = Executors.newFixedThreadPool(numThreads + 1);
         List<RunProducer> executeTasks = new ArrayList<>();
 
-        final Producer<String, ClickEvent> kafkaProducer = new KafkaProducerFactory(propertiesFilePath, sslEnable, mTLSEnable, saslscramEnable, glueSchemaRegistry).createProducer();
+        final Producer<String, com.amazonaws.kafka.samples.ClickEvent> kafkaProducer = new KafkaProducerFactory(propertiesFilePath, sslEnable, mTLSEnable, saslscramEnable, glueSchemaRegistry).createProducer();
 
         // Registering a shutdown hook so we can exit cleanly
         Runtime.getRuntime().addShutdownHook(new Thread(() -> shutdown(executeTasks, executor, kafkaProducer)));

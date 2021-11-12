@@ -201,7 +201,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
   }
   
   /** Creates a new ClickEvent RecordBuilder by copying an existing ClickEvent instance */
-  public static com.amazonaws.kafka.samples.ClickEvent.Builder newBuilder(samples.clickstream.avro.ClickEvent other) {
+  public static com.amazonaws.kafka.samples.ClickEvent.Builder newBuilder(com.amazonaws.kafka.samples.ClickEvent other) {
     return new com.amazonaws.kafka.samples.ClickEvent.Builder(other);
   }
   
@@ -222,7 +222,7 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
 
     /** Creates a new Builder */
     private Builder() {
-      super(samples.clickstream.avro.ClickEvent.SCHEMA$);
+      super(com.amazonaws.kafka.samples.ClickEvent.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
@@ -263,8 +263,8 @@ public class ClickEvent extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Creates a Builder by copying an existing ClickEvent instance */
-    private Builder(samples.clickstream.avro.ClickEvent other) {
-            super(samples.clickstream.avro.ClickEvent.SCHEMA$);
+    private Builder(com.amazonaws.kafka.samples.ClickEvent other) {
+            super(com.amazonaws.kafka.samples.ClickEvent.SCHEMA$);
       if (isValidValue(fields()[0], other.ip)) {
         this.ip = data().deepCopy(fields()[0].schema(), other.ip);
         fieldSetFlags()[0] = true;
