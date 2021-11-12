@@ -25,7 +25,7 @@ import java.util.Properties;
 
 class KafkaProducerFactory {
 
-    private final String BOOTSTRAP_SERVERS_CONFIG = "http://127.0.0.1:9092";
+    private final String BOOTSTRAP_SERVERS_CONFIG = "b-2.msakuse1edlbdev001.6bf6pg.c4.kafka.us-east-1.amazonaws.com:9094,b-1.msakuse1edlbdev001.6bf6pg.c4.kafka.us-east-1.amazonaws.com:9094";
     private final String SCHEMA_REGISTRY_URL_CONFIG = "http://127.0.0.1:8081";
     private final String ACKS_CONFIG = "all";
     private final String RETRIES_CONFIG = "5";
